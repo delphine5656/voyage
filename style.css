@@ -1,0 +1,559 @@
+*, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: cover;
+    height: auto;
+    font-family: sans-serif; 
+}
+
+h2,h3{
+    color: rgb(137,131,228);
+    font-family:'Quicksand', sans-serif;
+    padding: 2%;
+    margin-bottom: 2%;
+    text-align: left;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-style: oblique;
+}
+h1{
+    font-size: 2.5em;
+    color: rgb(137,131,228);
+    font-family:'Quicksand', sans-serif;
+    padding: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-style: oblique;
+}
+h2{
+    font-size: 2.3em;
+}
+a{
+    text-decoration: none;
+    color: ivory;
+}
+
+/*nav--*/
+.btn{
+    position: fixed;
+    left: 40px;
+    top: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgb(137,131,228);
+    z-index: 1000;
+    grid-area: menu;
+}
+
+.menuicon{
+    width: 30px;
+}
+
+.conteneurMenu { /*ce qui va slider de gauche à droite*/
+    background: linear-gradient(45deg, rgb(137,131,228), rgb(248,138,138));
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+
+}
+
+.listmenu{
+    padding: 15;
+    margin-top: 100px;
+    font-size: 28px;
+    line-height: 1;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ .listmenu a {
+     text-decoration: none;
+ }
+.menuListItem{
+    position: relative;
+    margin-top: 20px;
+    color: transparent;
+    list-style-type: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.itemListe{
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    color: rgb(19,7,71);
+    top: 0;
+    height: 49%;
+    transform: all 0.8s cubic-bezier(0.16,1.08,0.38,0.98);
+}
+
+.itemListe span {
+    display: block;
+
+}
+
+.itemListe + .itemListe{ /*cible le second span */
+    top: 48.9%;
+}
+
+.itemListe + .itemListe span {
+    transform: translateY(-48.9%);
+}
+
+.menuListItem:hover .itemListe,
+.menuListItem:active .itemListe{
+    color: aliceblue;
+    transform: skewX(12deg) translatex(5px);
+}
+
+.menuListItem:hover .itemListe +.itemListe,
+.menuListItem:active .itemListe +.itemListe{
+    color: aliceblue;
+    transform: skewX(12deg) translatex(-5px);
+}
+
+.menuListItem::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 49%;
+    left: -10%;
+    right: -18%;
+    height: 3px;
+    border-radius: 4px;
+    margin-top: -2px;
+    background-color: rgb(241, 63, 107);
+    transform: scale(0);
+    transition: transform 0.8s cubic-bezier(0.16,1.08,0.38,0.98);
+    z-index: 5;
+}
+
+.menuListItem:hover::before,
+.menuListItem:active::before{
+    transform: scale(1);
+}
+
+/*fin nav*/
+#myvideo{
+    position: relative;
+    height:cover;
+    width: 100%;
+    margin-bottom: 5%;
+    z-index: -1;
+}
+
+.title-principal{
+    position: absolute;
+    z-index: 100;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 65px;
+    font-weight: 900px;
+}
+.bouton-site{
+    border-radius: 10px;
+    background:linear-gradient(45deg, rgb(137,131,228), rgb(248,138,138));
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.7);
+    margin: 5% 50%; 
+    transform: translateX(-50%);
+    
+}
+.btn-accueil{
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    top: 30%;
+    border-radius: 10px;
+    background:linear-gradient(45deg, rgb(137,131,228), rgb(248,138,138));
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.7);
+    
+}
+.btn-contacter{
+    position: absolute;
+    z-index: 100;
+    left: 40%;
+    transform: translate(-40%,-40%);
+    top: 30%;
+    border-radius: 10px;
+    background:linear-gradient(45deg, rgb(137,131,228), rgb(248,138,138));
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.7);
+    
+}
+.btn-accueil:hover , .btn-contacter:hover{
+    font-size: 24px;
+}
+
+p{
+    text-align: justify;
+    padding: 4%;
+    
+}
+img{
+    border-radius: 5px;
+}
+
+hr{
+    width: 50%;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content :center;
+    height: 100%;
+    object-fit: cover;
+    justify-self: center;
+    
+   
+}
+.titre{
+    grid-column: 1/4;
+    grid-row: 1;
+    margin-bottom: 5%;
+}
+
+.un{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2;  
+    margin-bottom: 5%; 
+    
+}
+
+
+
+.deux{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 2;
+    margin-bottom: 5%;
+}
+
+.trois{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3;
+    position: relative;
+    margin-bottom: 7%;
+    height: 350px;
+}
+
+.canada{
+    height: auto;
+    width: 100%;
+    
+    
+}
+
+.montage{
+    height: auto;
+    width: 90%;
+    margin-left: 15%;
+}
+
+.tunisia {
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+ .para{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 5;
+    width: 90%;
+    top: 170px;
+    left: 10px;
+    background: linear-gradient(45deg, rgb(137,131,228), rgb(248,138,138));
+    border-radius: 10px;
+ }
+ 
+ .titre2{
+    grid-column: 1/4;
+    grid-row: 4;
+    margin-bottom: 5%;
+ }
+
+ .colonne1{
+    grid-column: 1/2;
+    grid-row: 5;
+    margin-bottom: 5%;
+    height: 500px;
+ }
+
+ .colonne2{
+    grid-column: 2/3;
+    grid-row: 5;
+    margin-bottom: 5%;
+    height: 500px;
+ }
+
+ .colonne3{
+    grid-column: 3/4;
+    grid-row: 5;
+    margin-bottom: 5%;
+    height: 500px;
+ }
+
+/*----------Format mobile-------*/
+
+@media (max-width: 767px){
+    #container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title-principal{
+        font-size: 25px;
+        top: 10%;
+        left: 60%;
+    }
+    .tunisia {
+        height: 300px;
+        width: 100%;
+    }
+    .para{
+        width: 90%;
+        top: 170px;
+        left: 10px;
+     }
+     .colonne1, .colonne2, .colonne3{
+         height: 250px;
+     }
+    .btn-accueil{
+        left: 65%;
+        transform: translate(-50%,-50%);
+        top: 18%;
+        padding: 10px 16px;
+        display: inline-block;
+        font-size: 10px;
+        
+    }
+    .btn-contacter{
+        left: 25%;
+        transform: translate(-50%,-50%);
+        top: 18%;
+        padding: 10px 16px;
+        display: inline-block;
+        font-size: 10px;
+        
+    }
+    .btn-accueil:hover , .btn-contacter:hover{
+        font-size: 14px;
+    }
+}
+
+
+/*---------format tablette*/
+
+@media (min-width: 768px){
+    .para{
+        width: 90%;
+        top: 300px;
+        left: 10px;
+     }
+     .colonne1, .colonne2, .colonne3{
+        height: 250px;
+    }
+    .btn-accueil{
+        left: 65%;
+        transform: translate(-50%,-50%);
+        top: 40%;
+        padding: 10px 16px;
+        display: inline-block;
+        font-size: 20px;
+        
+    }
+    .btn-contacter{
+        left: 25%;
+        transform: translate(-50%,-50%);
+        top: 40%;
+        padding: 10px 16px;
+        display: inline-block;
+        font-size: 20px;
+        
+    }
+    .btn-accueil:hover, .btn-contacter:hover{
+        font-size: 24px;
+    }
+}
+/*-------------------------------*/
+.gwada{
+    height: 250px;
+    width: 90%;
+    object-fit: cover;
+}
+
+.sp{
+    color: rgb(137,131,228);
+    font-weight: 900;
+}
+.lettrine::first-letter{
+    font-size: 2em;
+    font-family:'Quicksand', sans-serif;
+    letter-spacing: 2px;
+
+}
+
+footer{
+    background: linear-gradient(45deg, rgb(137,131,228), rgb(248,138,138));
+    padding: 3%;
+    text-align: center;
+}
+
+
+/*-------Page portfolio---*/
+
+#portfolio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.container {
+    position: relative;
+    width: 20%;
+    margin: 5%;
+    
+  }
+  
+  /* Make the image to responsive */
+  .image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  /* The overlay effect (full height and width) - lays on top of the container and over the image */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(45deg, rgb(137,131,228), rgb(248,138,138));
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: .3s ease;
+  }
+  
+  /* When you mouse over the container, the overlay text will "zoom" in display */
+  .container:hover .overlay {
+    transform: scale(1);
+  }
+  
+  /* Some text inside the overlay, which is positioned in the middle vertically and horizontally */
+  .text {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  @media (max-width: 767px){
+    #portfolio{
+        flex-direction: column;
+    }
+    .container {
+        width: 250px;
+    }
+    .text{
+        font-size: 15px;
+    }
+  }
+
+  /*--------------------page contact----------------------*/
+
+  .contact-form{
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 3%;
+      border: 2px solid rgb(137,131,228);
+      border-radius: 5px;
+      margin: 3%;
+  }
+
+  .first-container{
+      background-image: url("image/canada.jpg");
+      border-radius: 5px;  
+      padding: 3%;  
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      
+  }
+
+  .info,p{
+      text-align: center;
+  }
+
+
+  .sec-container {
+      line-height: 1.5;
+  }
+
+  .sec-container form{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .sec-container form .form-group label{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: rgb(137,131,228);
+
+  }
+  @media (max-width: 767px){
+    .contact-form{
+        flex-direction: column;
+        margin: 3%;
+    }
+
+    .first-container{
+        margin-bottom: 5%;   
+    }
+  
+  }
